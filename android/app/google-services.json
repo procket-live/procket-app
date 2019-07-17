@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "552527484705",
+    "firebase_url": "https://procket-live.firebaseio.com",
+    "project_id": "procket-live",
+    "storage_bucket": "procket-live.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552527484705:android:10b7be37b2859bd9",
+        "android_client_info": {
+          "package_name": "com.procket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "552527484705-usidgb4nu5bfe3rcpo73r9s9lleoj9lc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVMKtx4IwhDuhdxttXNPmlfkBa44HTnLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "552527484705-usidgb4nu5bfe3rcpo73r9s9lleoj9lc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

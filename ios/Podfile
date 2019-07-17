@@ -1,0 +1,59 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'Procket' do
+  # Pods for Procket
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Required by RNFirebase
+  pod 'Firebase/Core', '~> 5.20.1'
+
+  # [OPTIONAL PODS] - comment out pods for firebase products you won't be using.
+  # pod 'Firebase/AdMob', '~> 5.20.1'
+  pod 'Firebase/Auth', '~> 5.20.1'
+  pod 'Firebase/Core', '~> 5.20.1'
+  pod 'Firebase/Database', '~> 5.20.1'
+  pod 'Firebase/Functions', '~> 5.20.1'
+  pod 'Firebase/DynamicLinks', '~> 5.20.1'
+  pod 'Firebase/Firestore', '~> 5.20.1'
+  # pod 'Firebase/Invites', '~> 5.20.1'
+  pod 'Firebase/Messaging', '~> 5.20.1'
+  pod 'Firebase/RemoteConfig', '~> 5.20.1'
+  pod 'Firebase/Storage', '~> 5.20.1'
+  pod 'Firebase/Performance', '~> 5.20.1'
+  pod 'Fabric', '~> 1.9.0'
+  pod 'Crashlytics', '~> 3.12.0'
+
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+
+  pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
+
+  pod 'RNLocalize', :path => '../node_modules/react-native-localize'
+
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
+  pod 'react-native-config', :path => '../node_modules/react-native-config'
+
+  pod 'CodePush', :path => '../node_modules/react-native-code-push'
+
+  pod 'lottie-react-native', :path => '../node_modules/lottie-react-native'
+
+  pod 'lottie-ios', :path => '../node_modules/lottie-ios'
+
+end
+
+target 'Procket-tvOS' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for Procket-tvOS
+
+  target 'Procket-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
