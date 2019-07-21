@@ -57,7 +57,7 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
         new LottiePackage(),
-        new CodePush("bUjpJM8gxmquhSLvODME5OvbOal9B1mCsJiCV", getApplicationContext(), BuildConfig.DEBUG),
+        new CodePush("gKw9wCuGDyIddZMOKJTZqRygQsioSJWcgdxGfB", getApplicationContext(), BuildConfig.DEBUG),
         new ReactNativeConfigPackage(),
         new RNGestureHandlerPackage(),
         new AsyncStoragePackage(),
