@@ -97,7 +97,7 @@ async function getNecessaryParams(obj) {
 
 function createFinalUrl(obj) {
     if (__DEV__) {
-        return `http://192.168.1.10:3000/${obj.url}`;
+        return `http://192.168.1.9:3000/${obj.url}`;
     }
 
     return `${Config.getConstants().API_URL}/${obj.url}`;

@@ -110,7 +110,7 @@ const RootNavigator = createStackNavigator(
                     zIndex: 0,
                     elevation: 0
                 },
-                title: 'Game Town - Login',
+                title: 'Procket - Login',
                 headerTintColor: TEXT_PRIMARY,
             }
         },
@@ -122,7 +122,7 @@ const RootNavigator = createStackNavigator(
                     zIndex: 0,
                     elevation: 0
                 },
-                title: 'Game Town - Create new account',
+                title: 'Procket - Create new account',
                 headerTintColor: TEXT_PRIMARY,
             }
         },

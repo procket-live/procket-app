@@ -3,7 +3,7 @@ import { List } from 'react-native-paper';
 import { ScrollView, Image, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
-import { BLACK, TEXT_PRIMARY, TEXT_SECONDARY, BLACK_LIGHT } from '../../Theme/colors';
+import { BLACK, TEXT_PRIMARY, TEXT_SECONDARY, BLACK_LIGHT, BLUE } from '../../Theme/colors';
 import { resetToScreen, navigate } from '../../Services/navigation.service';
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
 import { DisplayPrice } from '../../Utils/common.utils';
@@ -58,7 +58,7 @@ class WalletScene extends Component {
                     >
                         <List.Item
                             title="Add Amount"
-                            left={() => <List.Icon color="#fff" icon="credit-card" />}
+                            left={() => <List.Icon color={BLUE} icon="credit-card" />}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity
@@ -66,21 +66,21 @@ class WalletScene extends Component {
                     >
                         <List.Item
                             title="Transactions"
-                            left={() => <List.Icon color="#fff" icon="list" />}
+                            left={() => <List.Icon color={BLUE} icon="list" />}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity
                     >
                         <List.Item
                             title="FAQ"
-                            left={() => <List.Icon color="#fff" icon="face" />}
+                            left={() => <List.Icon color={BLUE} icon="face" />}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity
                     >
                         <List.Item
                             title="Leagal"
-                            left={() => <List.Icon color="#fff" icon="info" />}
+                            left={() => <List.Icon color={BLUE} icon="info" />}
                         />
                     </TouchableOpacity>
                 </List.Section>

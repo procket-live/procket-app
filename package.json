@@ -15,6 +15,7 @@
     "codepush": "appcenter codepush release-react -a Game-Town/game-town-android -d Production"
   },
   "dependencies": {
+    "@material-ui/lab": "^4.0.0-alpha.20",
     "@react-native-community/async-storage": "^1.4.1",
     "axios": "^0.18.0",
     "lodash": "^4.17.11",

@@ -9,7 +9,7 @@ const AppNavbar = () => (
         <Appbar.Content
             titleStyle={{ color: BLUE, fontWeight: '500', fontSize: 20 }}
             style={{ alignItems: 'center' }}
-            title="Game Town"
+            title="Procket"
         />
     </Appbar.Header>
 )
