@@ -3,7 +3,7 @@ import { List } from 'react-native-paper';
 import { ScrollView, Image, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
-import { BLACK, TEXT_PRIMARY, TEXT_SECONDARY, BLACK_LIGHT } from '../../Theme/colors';
+import { BLACK, TEXT_PRIMARY, TEXT_SECONDARY, BLACK_LIGHT, BLUE } from '../../Theme/colors';
 import { resetToScreen, navigate } from '../../Services/navigation.service';
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
 import AppConstants from '../../Constants/app.constants';
@@ -71,21 +71,21 @@ class AccountScene extends Component {
                     >
                         <List.Item
                             title="Game Profiles"
-                            left={() => <List.Icon color="#fff" icon="face" />}
+                            left={() => <List.Icon color={BLUE} icon="face" />}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity
                     >
                         <List.Item
                             title="About us"
-                            left={() => <List.Icon color="#fff" icon="info" />}
+                            left={() => <List.Icon color={BLUE} icon="info" />}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity
                     >
                         <List.Item
                             title="Terms and Conditions"
-                            left={() => <List.Icon color="#fff" icon="apps" />}
+                            left={() => <List.Icon color={BLUE} icon="apps" />}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity
@@ -93,7 +93,7 @@ class AccountScene extends Component {
                     >
                         <List.Item
                             title="Logout"
-                            left={() => <List.Icon color="#fff" icon="clear" />}
+                            left={() => <List.Icon color={BLUE} icon="clear" />}
                         />
                     </TouchableOpacity>
                 </List.Section>

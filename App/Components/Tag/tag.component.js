@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { YELLOW, CLAY, TEXT_SECONDARY } from '../../Theme/colors';
+import { YELLOW, CLAY, TEXT_SECONDARY, BLUE } from '../../Theme/colors';
 
 const Tag = ({ label, tagStyle, textStyle }) => (
     <View
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 4,
         borderWidth: 1,
-        borderColor: CLAY,
+        borderColor: BLUE,
         margin: 2,
         minWidth: 70,
         height: 30,

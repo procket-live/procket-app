@@ -89,6 +89,10 @@ class GameProfilesScene extends PureComponent {
     }
 
     RenderItem = ({ item }) => {
+        if (!item.game) {
+            return null;
+        }
+
         return (
             <TouchableOpacity
                 style={this.getCardCss(item._id)}
@@ -100,7 +104,7 @@ class GameProfilesScene extends PureComponent {
             >
                 <View style={{ width: widthPercentageToDP('30%') }} >
                     <Image
-                        source={{ uri: item.game.image_url }}
+                        source={{ uri: item.game ? item.game.image_url : '' }}
                         style={{ width: widthPercentageToDP('30%'), height: 100, borderTopLeftRadius: 5, borderBottomLeftRadius: 5 }}
                     />
                 </View>

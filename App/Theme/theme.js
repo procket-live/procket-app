@@ -9,7 +9,7 @@ const theme = {
     accent: YELLOW,
     error: RED,
     text: TEXT_PRIMARY,
-    disabled: CLAY,
+    disabled: BLUE,
     placeholder: TEXT_SECONDARY,
     backdrop: CLAY,
     primary: BLUE,

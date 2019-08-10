@@ -51,7 +51,16 @@ class AppScene extends Component {
                 message: 'Unable to validate user ',
                 duration: 1400,
                 type: 'error'
-            })
+            });
+            this.removeToken();
+        }
+    }
+
+    removeToken = async () => {
+        try {
+            await AsyncStorage.removeItem('@token')
+        } catch (e) {
+            // saving error
         }
     }
 
@@ -70,12 +79,14 @@ class AppScene extends Component {
     render() {
         return (
             <View style={{ flex: 1, backgroundColor: BLACK, alignItems: 'center', justifyContent: 'center' }} >
-                <LottieView
-                    ref={animation => {
-                        this.animation = animation;
-                    }}
-                    source={require('../../Assets/hourglass.json')}
-                />
+                <View style={{ width: 200, height: 200 }} >
+                    <LottieView
+                        ref={animation => {
+                            this.animation = animation;
+                        }}
+                        source={require('../../Assets/hourglass-black.json')}
+                    />
+                </View>
             </View>
         )
     }
