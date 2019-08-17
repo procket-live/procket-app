@@ -4,12 +4,12 @@ import { BLACK, BLACK_LIGHT, BLUE } from '../../Theme/colors';
 
 const AppNavbar = () => (
     <Appbar.Header
-        style={{ backgroundColor: BLACK, alignItems: 'center', borderBottomColor: BLACK_LIGHT, borderBottomWidth: 1 }}
+        style={{ backgroundColor: BLUE, alignItems: 'center' }}
     >
         <Appbar.Content
-            titleStyle={{ color: BLUE, fontWeight: '500', fontSize: 20 }}
+            titleStyle={{ color: BLACK, fontWeight: '500', fontSize: 20 }}
             style={{ alignItems: 'center' }}
-            title="Procket"
+            title="Procket - Mobile Gaming"
         />
     </Appbar.Header>
 )

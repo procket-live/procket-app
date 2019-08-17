@@ -5,7 +5,7 @@
   android:layout_centerHorizontal="true"
   android:layout_centerVertical="true"
   android:gravity="center_vertical|center_horizontal|center"
-  android:background="@color/primary_dark">
+  android:background="@color/white">
   <ImageView android:id="@+id/splashscreen_logo"
     android:layout_width="150dp"
     android:layout_height="150dp"

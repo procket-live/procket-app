@@ -109,11 +109,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.procket"
+        applicationId "com.procketgames"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 2
-        versionName "1.1"
+        versionCode 8
+        versionName "1.6.2"
 
         // Needed to support API<21, though there is a small chance proguard shrinks things sufficiently
         multiDexEnabled true

@@ -3,6 +3,7 @@ import axios from 'axios';
 import NotifyService from '../Services/notify.service';
 import Loader from '../Services/loader.service';
 import AsyncStorage from '@react-native-community/async-storage';
+import { BASE_URL } from '../Constants/app.constants';
 
 export const defautlHeaders = {
     'Content-Type': 'application/json;charset=UTF-8',
@@ -96,11 +97,11 @@ async function getNecessaryParams(obj) {
 }
 
 function createFinalUrl(obj) {
-    if (__DEV__) {
-        return `http://192.168.1.9:3000/${obj.url}`;
-    }
-
-    return `${Config.getConstants().API_URL}/${obj.url}`;
+    // if (__DEV__) {
+    //     return `http://192.168.1.9:3000/${obj.url}`;
+    // }
+    
+    return `${BASE_URL}/${obj.url}`;
 }
 
 async function createHeader(obj) {

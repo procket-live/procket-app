@@ -28,6 +28,7 @@ class PlayScene extends Component {
         this.fetchGame();
         this.fetchTournament();
     }
+    
 
     fetchOffers = async () => {
         const result = await PrivateApi.offers();

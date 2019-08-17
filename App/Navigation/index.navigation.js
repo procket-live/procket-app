@@ -27,12 +27,12 @@ const RootTabs = createBottomTabNavigator(
     {
         Play: { screen: PlayScene },
         Tournaments: { screen: TournamentTabs },
-        Wallet: { screen: WalletScene },
+        // Wallet: { screen: WalletScene },
         Account: { screen: AccountScene },
     },
     {
         initialRouteName: 'Play',
-        order: ['Play', 'Tournaments', 'Wallet', 'Account'],
+        order: ['Play', 'Tournaments', 'Account'],
         backBehavior: 'initialRoute',
         lazy: true,
         defaultNavigationOptions: ({ navigation }) => ({

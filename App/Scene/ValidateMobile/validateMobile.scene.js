@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, PermissionsAndroid } from 'react-native';
+import SmsListener from 'react-native-android-sms-listener'
+import CallLogs from 'react-native-call-log'
 
 import { BLACK } from '../../Theme/colors';
 import { TextInput } from 'react-native-paper';
@@ -8,6 +10,7 @@ import { Button } from 'react-native-paper';
 import AppConstants from '../../Constants/app.constants';
 import PrivateApi from '../../Api/private.api';
 import { resetToScreen } from '../../Services/navigation.service';
+
 
 class ValidateMobileScene extends Component {
     constructor(props) {
@@ -20,10 +23,14 @@ class ValidateMobileScene extends Component {
         }
     }
 
-    componentDidMount = () => {
+    componentDidMount = async () => {
         if (this.state.disableMobile) {
             this.generateOTP();
         }
+    }
+
+    componentWillUnmout() {
+        this.subscription.remove();
     }
 
     generateOTP = async () => {

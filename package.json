@@ -12,7 +12,7 @@
     "test": "jest",
     "preinstall": "chmod 777 ./preinstall.sh && ./preinstall.sh",
     "bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/build/intermediates/res/merged/release/",
-    "codepush": "appcenter codepush release-react -a Game-Town/game-town-android -d Production"
+    "codepush": "appcenter codepush release-react -a procket-live/Android-App -d Production"
   },
   "dependencies": {
     "@material-ui/lab": "^4.0.0-alpha.20",
@@ -23,6 +23,9 @@
     "moment": "^2.24.0",
     "react": "16.8.3",
     "react-native": "0.59.3",
+    "react-native-android-sms-listener": "^0.7.0",
+    "react-native-autodetect-otp": "^0.4.9",
+    "react-native-call-log": "wscodelabs/react-native-call-log",
     "react-native-check-app-install": "0.0.5",
     "react-native-code-push": "^5.6.0",
     "react-native-config": "^0.11.7",

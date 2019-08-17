@@ -5500,6 +5500,11 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-native-android-sms-listener@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/react-native-android-sms-listener/-/react-native-android-sms-listener-0.7.0.tgz#f5ffab7a825f07ee0928dad40a9ef3dbbebc8724"
+  integrity sha512-XRQzTW08UJe0rGTXF4JGJefLqPqlg4+zUMErYJhA+1cSkUBS3NHLzzl1MTDn9/3GVdFV2aPmAceZ9mSmtSozwg==
+
 react-native-animatable@^1.2.4:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.3.2.tgz#4783ee1a73dc98815aef234ce6b819f80bfe7d80"
@@ -5507,12 +5512,21 @@ react-native-animatable@^1.2.4:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-autodetect-otp@^0.4.9:
+  version "0.4.9"
+  resolved "https://registry.yarnpkg.com/react-native-autodetect-otp/-/react-native-autodetect-otp-0.4.9.tgz#c3f610bbcdc786a847e0cf8ba7e943126e2f8570"
+  integrity sha512-1DZT0iFFMnl/OSHTdQwXH5oJ9FPfucANfxgN9IhgXbpD5bEXDN6+qHjjp22+F9ahhG6ABfnUgu3/Uv1Kbns7bg==
+
 react-native-button@^2.3.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/react-native-button/-/react-native-button-2.4.0.tgz#42b487073a7ce7c54ab503f77c6ced1ab95742bf"
   integrity sha512-4siaJlpOLeL9fAhX8VU3cnUfcGLe3E2zABDWSKxkF+NiYOd+AnKeYY29WXlV8hXhCFo+Ry7E+alrJ6zjZLTSfg==
   dependencies:
     prop-types "^15.5.10"
+
+react-native-call-log@wscodelabs/react-native-call-log:
+  version "2.1.1"
+  resolved "https://codeload.github.com/wscodelabs/react-native-call-log/tar.gz/eaa0bb37ac1d0bc41da21cd07e9a354ae0dfa65a"
 
 react-native-check-app-install@0.0.5:
   version "0.0.5"
