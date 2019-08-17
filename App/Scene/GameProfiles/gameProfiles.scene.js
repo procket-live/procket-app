@@ -34,9 +34,7 @@ class GameProfilesScene extends PureComponent {
         }
 
         const result = await PrivateApi.participateTournament(body);
-        console.log('result', result);
         if (result.success) {
-            console.log('naviiigation');
             navigate('ReviewParticipation', { participation: result.response });
         }
     }
@@ -45,6 +43,7 @@ class GameProfilesScene extends PureComponent {
         const result = await PrivateApi.getGameProfiles();
         if (result.success) {
             const profiles = this.filterProfiles(result.response);
+            console.log('profiles', profiles);
             if (profiles.length == 0) {
                 this.createNewProfile();
             }

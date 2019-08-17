@@ -32,6 +32,12 @@ class AppScene extends Component {
             const user = result.response;
             AppConstants.USER = user;
 
+            const isAdminResult = await PrivateApi.isAdmin();
+            if (isAdminResult.success) {
+                AppConstants.IS_ADMIN = true;
+                setTimeout(AppConstants.REFRESH_APP);
+            }
+
             const isMobileValidated = user.is_mobile_verified;
             if (isMobileValidated) {
                 this.setFirebaseToken();

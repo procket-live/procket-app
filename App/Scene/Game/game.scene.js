@@ -13,6 +13,7 @@ import GameCard from '../../Components/GameCard/gameCard.component';
 import { navigate } from '../../Services/navigation.service';
 import PrivateApi from '../../Api/private.api';
 import NotifyService from '../../Services/notify.service';
+import { AccessNestedObject } from '../../Utils/common.utils';
 
 class GameScene extends PureComponent {
     constructor(props) {
@@ -51,6 +52,7 @@ class GameScene extends PureComponent {
     render() {
         const { game } = this.state;
         const gameId = this.props.navigation.getParam('gameId');
+        const gameName = AccessNestedObject(game, 'name');
 
         return (
             <View style={{ flex: 1 }} >
@@ -138,7 +140,7 @@ class GameScene extends PureComponent {
                 <BottomStickButton
                     onPress={() => {
                         if (game.active) {
-                            navigate('TournamentList', { gameId })
+                            navigate('TournamentList', { gameId, title: gameName })
                         } else {
                             NotifyService.notify({
                                 title: 'Coming Soon!!!',

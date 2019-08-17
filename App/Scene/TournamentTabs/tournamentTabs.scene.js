@@ -29,7 +29,6 @@ class TournamentTabs extends Component {
                 >
                     <TournamentListScene tabLabel="Upcoming Live" />
                     <TournamentListScene tabLabel="Completed" completed={1} />
-                    <LeaderboardScene tabLabel="Leaderboards" />
                 </ScrollableTabView>
             </React.Fragment>
         )

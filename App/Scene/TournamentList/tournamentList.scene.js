@@ -7,6 +7,10 @@ import { BLACK } from '../../Theme/colors';
 import PrivateApi from '../../Api/private.api';
 
 class TournamentListScene extends PureComponent {
+    static navigationOptions = ({ navigation }) => ({
+        title: `${navigation.state.params.title}`,
+    });
+
     constructor(props) {
         super(props);
         this.state = {
@@ -33,14 +37,11 @@ class TournamentListScene extends PureComponent {
                 style={{ flex: 1, backgroundColor: BLACK }}
                 data={this.state.tournaments}
                 renderItem={({ item }) => {
-                    console.log('item', item);
                     return (
-                        <View style={{ marginBottom: 5 }} >
-                            <TournamentCard
-                                tournament={item}
-                                width={wp('95%')}
-                            />
-                        </View>
+                        <TournamentCard
+                            tournament={item}
+                            width={wp('88%')}
+                        />
                     )
                 }}
             />

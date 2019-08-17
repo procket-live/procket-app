@@ -3,6 +3,7 @@ import { createBottomTabNavigator, createAppContainer, createStackNavigator } fr
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import { BLUE, BLACK, CLAY, BLACK_LIGHT, TEXT_PRIMARY } from '../Theme/colors';
+import AppConstants from '../Constants/app.constants';
 
 //Tabs Scene
 import PlayScene from '../Scene/Play/play.scene';
@@ -22,17 +23,19 @@ import WalletScene from '../Scene/Wallet/wallet.scene';
 import AddAmountScene from '../Scene/AddAmount/addAmount.scene';
 import TransactionsScene from '../Scene/Tansactions/transactions.scene';
 import ReviewParticipationScene from '../Scene/ReviewParticipation/reviewParticipation.scene';
+import AdminManageScene from '../Scene/AdminManage/adminManage.scene';
+import AddTournamentScene from '../Scene/AddTournament/addTournament.scene';
 
 const RootTabs = createBottomTabNavigator(
     {
         Play: { screen: PlayScene },
         Tournaments: { screen: TournamentTabs },
-        // Wallet: { screen: WalletScene },
+        Wallet: { screen: WalletScene },
         Account: { screen: AccountScene },
     },
     {
         initialRouteName: 'Play',
-        order: ['Play', 'Tournaments', 'Account'],
+        order: ['Play', 'Tournaments', 'Wallet', 'Account'],
         backBehavior: 'initialRoute',
         lazy: true,
         defaultNavigationOptions: ({ navigation }) => ({
@@ -140,7 +143,6 @@ const RootNavigator = createStackNavigator(
                     zIndex: 0,
                     elevation: 0
                 },
-                title: 'PUBG Mobile: Tournaments',
                 headerTintColor: TEXT_PRIMARY,
             }
         },
@@ -198,6 +200,18 @@ const RootNavigator = createStackNavigator(
                 headerTintColor: TEXT_PRIMARY,
             }
         },
+        AddTournament: {
+            screen: AddTournamentScene,
+            navigationOptions: {
+                headerStyle: {
+                    backgroundColor: BLACK,
+                    zIndex: 0,
+                    elevation: 0
+                },
+                title: 'Add tournament',
+                headerTintColor: TEXT_PRIMARY,
+            }
+        },
         Transactions: {
             screen: TransactionsScene,
             navigationOptions: {
@@ -219,6 +233,18 @@ const RootNavigator = createStackNavigator(
                     elevation: 0
                 },
                 title: 'Review',
+                headerTintColor: TEXT_PRIMARY,
+            }
+        },
+        AdminManage: {
+            screen: AdminManageScene,
+            navigationOptions: {
+                headerStyle: {
+                    backgroundColor: BLACK,
+                    zIndex: 0,
+                    elevation: 0
+                },
+                title: 'Admin Manage',
                 headerTintColor: TEXT_PRIMARY,
             }
         }

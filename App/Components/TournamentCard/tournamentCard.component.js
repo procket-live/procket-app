@@ -7,6 +7,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { navigate } from '../../Services/navigation.service';
 import moment from 'moment';
 import { widthPercentageToDP } from 'react-native-responsive-screen';
+import { AccessNestedObject } from '../../Utils/common.utils';
 
 function isLive(startTime, completed) {
     return moment().isAfter(moment(startTime, 'YYYY-MM-DD')) && !completed
@@ -18,12 +19,11 @@ function isOpen(startTime, completed) {
 
 
 const TournamentCard = ({ tournament = { game: {} }, width }) => {
-    const WIDTH = width || widthPercentageToDP('90%');
+    const WIDTH = width || widthPercentageToDP('88%');
     const startTime = tournament.start_time;
     const completed = tournament.completed;
     const joined = tournament.is_participated;
-    console.log('tournament', tournament);
-    // participation_id
+
     return (
         <TouchableOpacity
             onPress={() => {
@@ -37,9 +37,9 @@ const TournamentCard = ({ tournament = { game: {} }, width }) => {
             <View style={{ width: WIDTH, justifyContent: 'flex-start', backgroundColor: BLACK_LIGHT }} >
                 <Image
                     style={{ width: WIDTH, height: 160, resizeMode: 'cover' }}
-                    source={{ uri: tournament.game.wallpaper_url }}
+                    source={{ uri: AccessNestedObject(tournament, 'game.wallpaper_url') }}
                 />
-                <View style={{ padding: 10 }} >
+                <View style={{ padding: 15 }} >
                     <View style={{ flexDirection: 'row', height: 35, alignItems: 'center' }} >
                         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-start' }} >
                             <Text style={{ fontWeight: '500', fontSize: 18, color: TEXT_PRIMARY }} >

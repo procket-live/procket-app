@@ -9,7 +9,7 @@ import BottomStickButton from '../../Components/BottomStickButton/bottomStickBut
 import { ScrollView } from 'react-native-gesture-handler';
 import { navigate, resetToScreen } from '../../Services/navigation.service';
 import PrivateApi from '../../Api/private.api';
-import { DisplayPrice } from '../../Utils/common.utils';
+import { DisplayPrice, AccessNestedObject } from '../../Utils/common.utils';
 
 class ReviewParticipationScene extends PureComponent {
     constructor(props) {
@@ -26,6 +26,9 @@ class ReviewParticipationScene extends PureComponent {
 
     fetchData = async () => {
         const participationId = this.props.navigation.getParam('participation_id')
+        if (!participationId) {
+            return;
+        }
         const result = await PrivateApi.getParticipation(participationId);
         if (result.success) {
             this.setState({ participation: result.response, joined: true });
@@ -118,7 +121,7 @@ class ReviewParticipationScene extends PureComponent {
                                         <View style={{ flex: 2, alignItems: 'center', justifyContent: 'center' }} >
                                             <Text style={{ fontWeight: '500', fontSize: 18, color: GREEN }} >
                                                 JOINED
-                                </Text>
+                                            </Text>
                                         </View>
                                     </View>
                                 </View> : null
@@ -172,16 +175,16 @@ class ReviewParticipationScene extends PureComponent {
                             _.chunk(tournament.game_meta, 3).map((segment) => (
                                 <View style={{ flexDirection: 'row', height: 40, marginTop: 10 }} >
                                     <View style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'center' }} >
-                                        <Text style={{ fontSize: 16, color: TEXT_PRIMARY, fontWeight: '300' }} >{segment[0].key}</Text>
-                                        <Text style={{ fontSize: 16, color: TEXT_SECONDARY, fontWeight: '300' }} >{segment[0].value}</Text>
+                                        <Text style={{ fontSize: 16, color: TEXT_PRIMARY, fontWeight: '300' }} >{AccessNestedObject(segment, `${0}.key`)}</Text>
+                                        <Text style={{ fontSize: 16, color: TEXT_SECONDARY, fontWeight: '300' }} >{AccessNestedObject(segment, `${0}.value`)}</Text>
                                     </View>
                                     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} >
-                                        <Text style={{ fontSize: 16, color: TEXT_PRIMARY, fontWeight: '300' }} >{segment[1].key}</Text>
-                                        <Text style={{ fontSize: 16, color: TEXT_SECONDARY, fontWeight: '300' }} >{segment[1].value}</Text>
+                                        <Text style={{ fontSize: 16, color: TEXT_PRIMARY, fontWeight: '300' }} >{AccessNestedObject(segment, `${1}.key`)}</Text>
+                                        <Text style={{ fontSize: 16, color: TEXT_SECONDARY, fontWeight: '300' }} >{AccessNestedObject(segment, `${1}.value`)}</Text>
                                     </View>
                                     <View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center' }} >
-                                        <Text style={{ fontSize: 16, color: TEXT_PRIMARY, fontWeight: '300' }} >{segment[2].key}</Text>
-                                        <Text style={{ fontSize: 16, color: TEXT_SECONDARY, fontWeight: '300' }} >{segment[2].value}</Text>
+                                        <Text style={{ fontSize: 16, color: TEXT_PRIMARY, fontWeight: '300' }} >{AccessNestedObject(segment, `${2}.key`)}</Text>
+                                        <Text style={{ fontSize: 16, color: TEXT_SECONDARY, fontWeight: '300' }} >{AccessNestedObject(segment, `${2}.value`)}</Text>
                                     </View>
                                 </View>
                             ))

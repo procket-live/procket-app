@@ -9,6 +9,7 @@ import BottomStickButton from '../../Components/BottomStickButton/bottomStickBut
 import { ScrollView } from 'react-native-gesture-handler';
 import { navigate } from '../../Services/navigation.service';
 import PrivateApi from '../../Api/private.api';
+import { AccessNestedObject } from '../../Utils/common.utils';
 
 class TournamentScene extends PureComponent {
     constructor(props) {
@@ -130,16 +131,16 @@ class TournamentScene extends PureComponent {
                             _.chunk(tournament.game_meta, 3).map((segment) => (
                                 <View style={{ flexDirection: 'row', height: 40, marginTop: 10 }} >
                                     <View style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'center' }} >
-                                        <Text style={{ fontSize: 16, color: TEXT_PRIMARY, fontWeight: '300' }} >{segment[0].key}</Text>
-                                        <Text style={{ fontSize: 16, color: TEXT_SECONDARY, fontWeight: '300' }} >{segment[0].value}</Text>
+                                        <Text style={{ fontSize: 16, color: TEXT_PRIMARY, fontWeight: '300' }} >{AccessNestedObject(segment, `${0}.key`)}</Text>
+                                        <Text style={{ fontSize: 16, color: TEXT_SECONDARY, fontWeight: '300' }} >{AccessNestedObject(segment, `${0}.value`)}</Text>
                                     </View>
                                     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} >
-                                        <Text style={{ fontSize: 16, color: TEXT_PRIMARY, fontWeight: '300' }} >{segment[1].key}</Text>
-                                        <Text style={{ fontSize: 16, color: TEXT_SECONDARY, fontWeight: '300' }} >{segment[1].value}</Text>
+                                        <Text style={{ fontSize: 16, color: TEXT_PRIMARY, fontWeight: '300' }} >{AccessNestedObject(segment, `${1}.key`)}</Text>
+                                        <Text style={{ fontSize: 16, color: TEXT_SECONDARY, fontWeight: '300' }} >{AccessNestedObject(segment, `${1}.value`)}</Text>
                                     </View>
                                     <View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center' }} >
-                                        <Text style={{ fontSize: 16, color: TEXT_PRIMARY, fontWeight: '300' }} >{segment[2].key}</Text>
-                                        <Text style={{ fontSize: 16, color: TEXT_SECONDARY, fontWeight: '300' }} >{segment[2].value}</Text>
+                                        <Text style={{ fontSize: 16, color: TEXT_PRIMARY, fontWeight: '300' }} >{AccessNestedObject(segment, `${2}.key`)}</Text>
+                                        <Text style={{ fontSize: 16, color: TEXT_SECONDARY, fontWeight: '300' }} >{AccessNestedObject(segment, `${2}.value`)}</Text>
                                     </View>
                                 </View>
                             ))

@@ -112,8 +112,8 @@ android {
         applicationId "com.procketgames"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 8
-        versionName "1.6.2"
+        versionCode 9
+        versionName "1.6.3"
 
         // Needed to support API<21, though there is a small chance proguard shrinks things sufficiently
         multiDexEnabled true

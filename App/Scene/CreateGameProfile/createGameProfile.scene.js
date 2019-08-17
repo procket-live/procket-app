@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
+import { Dropdown } from 'react-native-material-dropdown';
 
 import { BLACK } from '../../Theme/colors';
 import { TextInput } from 'react-native-paper';
@@ -12,13 +13,41 @@ class CreateGameProfileScene extends Component {
         super(props);
         this.state = {
             games: [],
-            gameId: '5cf37cf863b7aa224ced7198',
+            gameId: '',
             username: '',
             nickName: ''
         }
     }
 
+    componentDidMount = () => {
+        this.fetchGame();
+    }
+
+    fetchGame = async () => {
+        const result = await PrivateApi.getGames();
+        if (result.success) {
+            this.setState({ games: this.processGame(result.response) })
+        }
+    }
+
+    processGame = (games) => games.map((game) => ({ label: game.name, value: game._id }))
+
     creteProfile = async () => {
+        if (!this.state.gameId) {
+            NotifyService.notify({ title: 'Error', message: 'Please select game', type: 'warn' })
+            return;
+        }
+
+        if (!this.state.username) {
+            NotifyService.notify({ title: 'Error', message: 'Please enter username', type: 'warn' })
+            return;
+        }
+
+        if (!this.state.nickName) {
+            NotifyService.notify({ title: 'Error', message: 'Please enter nickname', type: 'warn' })
+            return;
+        }
+
         const callback = this.props.navigation.getParam('callback');
         const params = {
             game_id: this.state.gameId,
@@ -40,17 +69,20 @@ class CreateGameProfileScene extends Component {
         }
     }
 
+    selectGame = (value) => {
+        this.setState({ gameId: value })
+    }
+
     render() {
         return (
             <View style={{ flex: 1, backgroundColor: BLACK }} >
                 <View style={{ flex: 4, alignItems: 'center' }} >
                     <View style={{ width: '90%' }} >
                         <View style={{ padding: 5 }} >
-                            <TextInput
-                                disabled={true}
-                                mode='outlined'
-                                label='Game'
-                                value={"PUBG Mobile"}
+                            <Dropdown
+                                label='Select Game'
+                                data={this.state.games}
+                                onChangeText={this.selectGame}
                             />
                         </View>
                         <View style={{ padding: 5 }} >

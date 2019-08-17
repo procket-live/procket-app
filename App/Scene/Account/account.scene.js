@@ -66,6 +66,17 @@ class AccountScene extends Component {
                     </View>
                 </View>
                 <List.Section style={{ marginTop: 20 }} >
+                    {
+                        AppConstants.IS_ADMIN ?
+                            <TouchableOpacity
+                                onPress={() => navigate('AdminManage')}
+                            >
+                                <List.Item
+                                    title="Admin Manage"
+                                    left={() => <List.Icon color={BLUE} icon="work" />}
+                                />
+                            </TouchableOpacity> : null
+                    }
                     <TouchableOpacity
                         onPress={() => navigate('GameProfiles')}
                     >
