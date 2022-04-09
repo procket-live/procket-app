@@ -20,7 +20,7 @@
     "axios": "^0.18.0",
     "lodash": "^4.17.11",
     "lottie-react-native": "^2.6.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "react": "16.8.3",
     "react-native": "0.59.3",
     "react-native-android-sms-listener": "^0.7.0",
