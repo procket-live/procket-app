@@ -27,7 +27,7 @@
     "react-native-autodetect-otp": "^0.4.9",
     "react-native-call-log": "wscodelabs/react-native-call-log",
     "react-native-check-app-install": "0.0.5",
-    "react-native-code-push": "^5.6.0",
+    "react-native-code-push": "^7.0.5",
     "react-native-config": "^0.11.7",
     "react-native-datepicker": "^1.7.2",
     "react-native-device-info": "2.1.2",
